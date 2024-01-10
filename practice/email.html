@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <style>
+    .envelope {
+      border: 1px solid #333;
+      padding: 12px;
+      font-family: Arial;
+    }
+    
+    .envelope .to,
+    .envelope .from {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="envelope">
+
+  <div id="envelope-from"></div>
+
+  <div class="message">
+    <!-- Email content would go here -->
+    <p>Dear Sir/Madam,</p>
+    
+    <p>Message content...</p>
+    
+    <p>Sincerely,</p>
+    <p id="envelope-signature"></p>
+  </div>
+
+  <div id="envelope-to"></div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+
+  // Sender info
+  var fromName = "John Doe";
+  var fromEmail = "john@example.com";
+  var from = fromName + "<br/>" + fromEmail;
+
+  // Recipient info
+  var toName = "Jane Smith";
+  var toEmail = "jane@exmaple.org";
+  var to = toName + "<br/>" + toEmail;
+
+  // Populate envelope
+  $("#envelope-from").html(from); 
+  $("#envelope-to").html(to);
+  
+  // Signature
+  $("#envelope-signature").text(fromName);
+
+});
+</script>
+
+</body>
+</html>
